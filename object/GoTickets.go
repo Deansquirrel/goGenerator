@@ -1,9 +1,8 @@
 package object
 
 import (
+	"errors"
 	"fmt"
-	"github.com/Deansquirrel/goGenerator/interface"
-	"github.com/kataras/iris/core/errors"
 )
 
 type goTickets struct {
@@ -12,13 +11,13 @@ type goTickets struct {
 	active   bool
 }
 
-func NewGoTickets(total uint32) (_interface.IGoTickets, error) {
+func NewGoTickets(total uint32) (goTickets, error) {
 	gt := goTickets{}
 	if !gt.init(total) {
 		errMsg := fmt.Sprintf("The goroutine ticket pool can not be initialized!(total=%d)\n", total)
-		return nil, errors.New(errMsg)
+		return gt, errors.New(errMsg)
 	}
-	return &gt, nil
+	return gt, nil
 }
 
 func (gt *goTickets) init(total uint32) bool {

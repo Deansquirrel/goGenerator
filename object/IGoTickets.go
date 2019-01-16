@@ -1,4 +1,4 @@
-package _interface
+package object
 
 type IGoTickets interface {
 	Take()

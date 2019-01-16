@@ -5,6 +5,6 @@ import (
 	"time"
 )
 
-var SysConfig object.SysConfig
+var SysConfig *object.SysConfig
 var TimeoutNS time.Duration
 var DurationNS time.Duration

@@ -1,4 +1,4 @@
-package _interface
+package object
 
 type IGenerator interface {
 	Start() bool

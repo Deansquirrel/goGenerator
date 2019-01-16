@@ -1,17 +1,16 @@
 package object
 
 type SysConfig struct {
-	TotalConfig totalConfig			`toml:"total"`
-	GeneratorConfig generatorConfig	`toml:"generator"`
+	Total     total     `toml:"total"`
+	Generator generator `toml:"generator"`
 }
 
-type totalConfig struct {
-	IsDebug bool					`toml:"isDebug"`
-	T string	`toml:"t"`
+type total struct {
+	IsDebug bool `toml:"isDebug"`
 }
 
-type generatorConfig struct {
-	TimeoutNS uint32		`toml:"timeoutNS"`
-	Lps uint32						`toml:"lps"`
-	DurationNS uint32		`toml:"durationNS"`
+type generator struct {
+	TimeoutNS  uint32 `toml:"timeoutNS"`
+	Lps        uint32 `toml:"lps"`
+	DurationNS uint32 `toml:"durationNS"`
 }
